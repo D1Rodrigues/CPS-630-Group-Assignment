@@ -1,0 +1,47 @@
+@media only screen and (min-width: 1366px) {
+  .btn-flat {
+    margin-left: 20px !important;
+    font-size: 13px !important;
+  }
+  .ad1 {
+    width: 100% !important;
+  }
+  .carousel {
+    width: 100% !important;
+    background-color: black;
+  }
+  .Dman {
+    width: 14% !important;
+    top: 10px !important;
+    left: 10px !important;
+  }
+  .inline-icon-account {
+    vertical-align: bottom;
+    font-size: 25px !important;
+  }
+  .contact-info {
+    font-size: 20px !important;
+  }
+}
+@media only screen and (max-width: 1366px) and (min-width: 1280px) {
+  .Dman {
+    width: 14% !important;
+    top: 10px !important;
+    left: 10px !important;
+  }
+  .btn-flat {
+    margin-left: 20px !important;
+    font-size: 10px !important;
+  }
+  .ad1 {
+    width: 100% !important;
+  }
+
+  .carousel {
+    width: 100% !important;
+    background-color: black;
+  }
+  .products {
+    width: 30% !important;
+  }
+}
