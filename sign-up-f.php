@@ -68,6 +68,7 @@
             echo $errorWarning . "<br>";
         }
         echo "Please go back and try again.";
+        echo '<a href = "sign-up.html"> Try registering again!</a>';
     }
 
 
