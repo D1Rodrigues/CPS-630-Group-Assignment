@@ -1,4 +1,5 @@
 <?php
+   session_start();    
    require_once 'config.php';
 
     $fname = $_POST["signup-fname"];
@@ -55,7 +56,9 @@
 
         if ($conn->query($sql))
         {
-            echo ("You are logged in successfully!");
+            $_SESSION['username'] = $username;
+            $_SESSION['success'] = "You are now logged in";
+            header("Location: P_Home.html");
         }	
     }
     else //if there any errors, tell user to try start again
