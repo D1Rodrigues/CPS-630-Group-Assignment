@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name = "viewport" content = "width-device-width, intial-scale = 1.0"> 
+        <meta charset = "UTF-8">
+        <link rel="stylesheet" href = "Stylesheets/TermProj_1.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+	
+	<style>
+		
+		
+		ul.logo-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  overflow-x: auto;
+}
+
+ul.logo-list li {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 150px;
+}
+
+
+		section#cart ul{
+			height: 200px;		
+			overflow: auto;
+			background-color: #cccccc;
+		}
+
+		img {
+    	pointer-events: none;
+		}
+		li[data-id] img{
+	display: none;
+}
+
+		
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+
+		console.log(localStorage.getItem("item"));
+		function addEvent(element, event, delegate ) {
+			
+			if (typeof (window.event) != 'undefined' && element.attachEvent)
+				element.attachEvent('on' + event, delegate);
+			else 
+				element.addEventListener(event, delegate, false);
+		}
+		
+		addEvent(document, 'readystatechange', function() {
+			if ( document.readyState !== "complete" ) 
+				return true;
+				
+			var items = document.querySelectorAll("section.products ul li");
+			var cart = document.querySelectorAll("#cart ul")[0];
+			
+			function updateCart(){
+				var total = 0.0;
+				var cart_items = document.querySelectorAll("#cart ul li")
+				for (var i = 0; i < cart_items.length; i++) {
+					var cart_item = cart_items[i];
+					var quantity = cart_item.getAttribute('data-quantity');
+					var price = cart_item.getAttribute('data-price');
+					
+					var sub_total = parseFloat(quantity * parseFloat(price));
+					cart_item.querySelectorAll("span.sub-total")[0].innerHTML = " = " + sub_total.toFixed(2);
+					
+					total += sub_total;
+				}
+				
+				document.querySelectorAll("#cart span.total")[0].innerHTML = total.toFixed(2);
+			}
+			
+			function addCartItem(item, id) {
+				var clone = item.cloneNode(true);
+				clone.setAttribute('data-id', id);
+				clone.setAttribute('data-quantity', 1);
+				clone.removeAttribute('id');
+				
+				var fragment = document.createElement('span');
+				fragment.setAttribute('class', 'quantity');
+				fragment.innerHTML = ' x 1';
+				clone.appendChild(fragment);	
+				
+				fragment = document.createElement('span');
+				fragment.setAttribute('class', 'sub-total');
+				clone.appendChild(fragment);					
+				cart.appendChild(clone);
+				addList();
+				clearCart();
+				updateList();
+				
+			}
+			
+			function updateCartItem(item){
+				var quantity = item.getAttribute('data-quantity');
+				quantity = parseInt(quantity) + 1
+				item.setAttribute('data-quantity', quantity);
+				var span = item.querySelectorAll('span.quantity');
+				span[0].innerHTML = ' x ' + quantity;
+				addList();
+				clearCart();
+				updateList();
+				
+			}
+			
+			function onDrop(event){			
+				
+				
+				if(event.preventDefault) event.preventDefault();
+				if (event.stopPropagation) event.stopPropagation();
+				else event.cancelBubble = true;
+				
+				var id = event.dataTransfer.getData("Text");
+
+				var item = document.getElementById(id);			
+				
+				
+
+				var exists = document.querySelectorAll("#cart ul li[data-id='" + id + "']");
+				
+				if(exists.length > 0){
+					updateCartItem(exists[0]);
+				} else {
+					addCartItem(item, id);
+				}
+				
+				updateCart();
+				
+				return false;
+			}
+			
+			function onDragOver(event){
+				
+				if(event.preventDefault) event.preventDefault();
+				if (event.stopPropagation) event.stopPropagation();
+				else event.cancelBubble = true;
+				return false;
+			}				
+
+
+			
+
+			function addList(){
+			window.localStorage.setItem("item", JSON.stringify(document.getElementById("list").innerHTML));
+			
+			console.log("1");
+			console.log(JSON.stringify(document.getElementById("list").outerHTML));
+			//window.localStorage.setItem("item", JSON.stringify(document.getElementById("list").outerHTML));
+			//console.log(localStorage.getItem("itemList"));
+			//console.log(document.getElementById("list"));
+
+			let tempElement = document.createElement("div");
+			tempElement.setAttribute("id","delete");
+			tempElement.innerHTML = JSON.parse(localStorage.getItem("item"));
+			//console.log(tempElement.children[0].innerText);	
+			console.log("2");
+			console.log(JSON.parse(localStorage.getItem("item")));
+			document.getElementById("list").appendChild(tempElement);
+			}
+
+			function updateList(){
+			console.log("3");
+			console.log(JSON.stringify(document.getElementById("list").innerHTML));
+			//window.localStorage.setItem("item", JSON.stringify(document.getElementById("list").outerHTML));
+			//console.log(localStorage.getItem("itemList"));
+			//console.log(document.getElementById("list"));
+
+			let tempElement = document.createElement("div");
+			tempElement.setAttribute("id","delete");
+			tempElement.innerHTML = JSON.parse(localStorage.getItem("item"));
+			//console.log(tempElement.children[0].innerText);	
+			console.log("4");
+			console.log(JSON.parse(localStorage.getItem("item")));
+			document.getElementById("list").appendChild(tempElement);
+			}
+
+			updateList();
+			updateCart();
+			addEvent(cart, 'drop', onDrop);
+			addEvent(cart, 'dragover', onDragOver);
+			
+			function onDrag(event){
+				event.dataTransfer.effectAllowed = "move";
+				event.dataTransfer.dropEffect = "move";
+				var target = event.target || event.srcElement;
+				var success = event.dataTransfer.setData('Text', target.id);
+			}
+				
+			for (var i = 0; i < items.length; i++) {
+				var item = items[i];
+				item.setAttribute("draggable", "true");
+				addEvent(item, 'dragstart', onDrag);
+			};
+		});
+
+
+		
+        function clearCart(){
+            let list = document.getElementById("list");
+            [...list.children].forEach(c => list.removeChild(c));
+			
+            document.querySelectorAll("#cart span.total")[0].innerHTML = "0.00";
+			
+        };
+		function clearMemory(){
+			let list = document.getElementById("list");
+            [...list.children].forEach(c => list.removeChild(c));
+			window.localStorage.setItem("item", JSON.stringify(document.getElementById("list").innerHTML));
+            document.querySelectorAll("#cart span.total")[0].innerHTML = "0.00";
+		};
+	</script>
+	
+	
+
+
+</head>
+<body>
+
+	<nav class = "nav-wrapper white"> 
+        <ul id = "nav-mobile" class="left hide-on-med-and-down">
+            <li style = "margin-left:20px;">
+                <a> <a> <i class = "material-icons black-text">dehaze</i> </a>
+            </li>
+            <li> 
+                <a class="btn-flat black-text" style="margin-left:20px;">Home</a>
+             </li>
+             <li> 
+                <a class="btn-flat black-text" style="margin-left:20px;">About Us</a>
+             </li>
+             <li> 
+                <a class="btn-flat black-text" style="margin-left:20px;">Contact Us</a>
+             </li>
+             <li> 
+                <a class="btn-flat black-text" style="margin-left:20px;">Reviews</a>
+             </li>
+        </ul>
+        <ul id = "nav-mobile" class="right hide-on-med-and-down"> 
+            <li> 
+                <a class="btn-flat black-text" style="margin-left:20px;">Sign-in</a>
+             </li>
+             <li> 
+                <a class="btn-flat black-text" style="margin-left:20px;">Sign-up</a>
+             </li>
+            <li> 
+                <a class="btn-flat black-text" style="margin-left:20px;">
+                    <i class="material-icons right">shopping_cart</i>
+                    Cart</a>
+             </li>
+        </ul>
+       
+    </nav>
+
+    <div id="page">	
+		<section id="cart" class="shopping-cart">
+			<h1>Shopping Cart</h1>
+			<ul id="list">
+			</ul>
+			<span class="total">0.00</span>
+            <button onclick="clearMemory()">Clear</button>
+		</section>
+		<h1 class="products">Product List</h1>
+		<section id="products" class="products">
+			
+			
+			<ul class="logo-list">
+				<li style="background-color: #dff" id="product-1" data-price="1200.00"><span><img src="products/black_toe_j1.png">Jordan 1 Shadows<br>$1200.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-2" data-price="400.00"><span><img src="products/blue_yeezy_350.png">Yeezy Boost 350 V2 Dazzling Blue<br>$400.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-3" data-price="900.00"><span><img src="products/bred_j4.png">Jordan 4 Bred <br>$900.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-4" data-price="1800.00"><span><img src="products/dior_canvas.png">Dior B23 Black <br> $1800.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-5" data-price="200.00"><span><img src="products/fog_black_hoodie.png">FOG Hoodie Black<br>$200.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-6" data-price="150.00"><span><img src="products/fog_black_tee.png">FOG Tee Black <br> $150.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-7" data-price="200.00"><span><img src="products/fog_oatmeal_hoodie.png">FOG Hoodie Oatmeal<br> $200.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-8" data-price="200.00"><span><img src="products/fog_white_hoodie.png">FOG Hoodie White<br>$200.00</span></li>
+				<li style="background-color: #dff" id="product-9" data-price="250.00"><span><img src="products/kaws_nf_hoodie.png">KAWS x The North Face Hoodie <br>$250.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-10" data-price="300.00"><span><img src="products/nocta_hoodie.png">Nocta Hoodie Cardinal<br> $300.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-11" data-price="1000.00"><span><img src="products/nocta_jacket.png">Nike x Drake Nocta Puffer Jacket<br> $1000.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-12" data-price="180.00"><span><img src="products/ow_belt.png">Off-White Industrial Belt<br> $180.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-13" data-price="70.00"><span><img src="products/supreme_beanie.png">Supreme Beanie Black<br>$70.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-14" data-price="300.00"><span><img src="products/supreme_brick2.png">Supreme Brick<br> $300.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-15" data-price="220.00"><span><img src="products/supreme_coffeemaker2.png">Supreme Bialetti Moka Express<br> $220.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-16" data-price="130.00"><span><img src="products/supreme_sidebag.png">Supreme Sling Bag Black<br> $130.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-17" data-price="50.00"><span><img src="products/supreme_workgloves.png">Supreme Grip Work Gloves<br> $50.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-18" data-price="350.00"><span><img src="products/vlone_hoodie.png">Vlone x Palm Angels Hoodie Black/Purple<br> $350.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-19" data-price="80.00"><span><img src="products/vlone_jw_tee.png">Juice Wrld x Vlone Butterfly T-shirt<br> $80.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-20" data-price="80.00"><span><img src="products/vlone_jw_tee2.png">Juice Wrld x Vlone 999 T-shirt<br> $80.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-21" data-price="100.00"><span><img src="products/vlone_pop_tee.png">Pop Smoke x Vlone The Woo T-shirt<br> $100.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-22" data-price="600.00"><span><img src="products/bred_yeezy_350.png">Yeezy Boost 350 V2 Bred<br>$600.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-23" data-price="160.00"><span><img src="products/yeezy_gap_hoodie.png">Yeezy x Gap Hoodie Black<br>$160.00 CAD</span></li>
+				<li style="background-color: #dff" id="product-24" data-price="330.00"><span><img src="products/yeezy_gap_jacket.png">Yeezy x Gap Round Jacket Black<br>$330.00 CAD</span></li>
+
+			</ul>
+		</section>
+	</div> 	
+</body>,
+</html>
