@@ -62,7 +62,7 @@
                 <h4 class = "center" style="color: lightgrey; font-size:15px;">Join us now and join the revolution. You will join.... You will submit</h4>
             <br> 
             <br>
-            <form action ="sign-up-f.php" method = "post">
+           <form action ="sign-up-f.php" method = "post">
                   <!---First/Last Name -->
                   <div class = "row"> 
                     <div class = "input field col s4 offset-s2"> 
@@ -88,11 +88,11 @@
                   <!-- Date of birth/Gender-->
                   <div class = "row"> 
                     <div class = " col s4 offset-s2"> 
-                        <input type = "date" placeholder ="Date of Birth" id="DoB" class ="datepicker" style ="color:lightgray">
+                        <input type = "date" placeholder ="Date of Birth" id="DoB" name="signup-date" class ="datepicker" style ="color:lightgray">
                         <label for ="DoB"> Date of Birth</label>
                     </div> 
                     <div class  = "input-field col s4 offset-s1">
-                        <select>
+                        <select name="gender">
                             <option value ="" disabled selected> Gender </option>
                             <option value ="Male"> Male </option>
                             <option value ="Female"> Female </option>
@@ -110,6 +110,7 @@
                    Already a member? <a href = "sign-in.html">Sign in</a> 
                   <h4>
             </form>
+   
         </section> 
         
     </body>
