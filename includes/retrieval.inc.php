@@ -12,7 +12,6 @@
         $conn = $this->connect();
         $sql = "SELECT " . $columns ." FROM " . $this->table . " WHERE " . $conditionals;
 
-        //$sql = "SELECT id, firstname, lastname FROM StRec";
         $result = $conn->query($sql);
         
         return $result;
