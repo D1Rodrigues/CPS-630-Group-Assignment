@@ -120,7 +120,7 @@
 </nav>
 </body>
     <h4 class ="center"> Delete </h4>
-    <form> 
+    <form method="post" action="dropdown-delete.php"> 
     <div class ="row"> 
             <div class = "row"> 
                 <div class ="input-field col s4 offset-s1">
@@ -133,7 +133,7 @@
                 </div> 
             </div>
             <div class ="row"> 
-                    <button class = "btn waves-effect waves-light col s4 offset-s4 black" type="submit" name="action"> Date</button>
+                    <button class = "btn waves-effect waves-light col s4 offset-s4 black" type="submit" name="action"> Delete</button>
             </div>
     </form> 
         
