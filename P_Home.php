@@ -119,22 +119,29 @@
      </div>
     <br> 
     <br>
-    <form method = "post">
+    <form method = "post" action="db-maintain.php">
     <div class ="row"> 
        <div class ="col s5 ">
         <select name="edit">
             <option value ="" disabled selected> Choice </option>
             <option value ="insert"> Insert </option>
             <option value ="delete"> Delete </option>
-            <option value ="(s)elect"> Select </option>
+            <option value ="select"> Select </option>
             <option value ="update"> Update </option>
         </select>
-       </div> 
+       </div>
+       <div class ="row"> 
+            <button class = "btn waves-effect waves-light col s3 offset-s4 black" type="submit" name="action"> SELECT MODE </button>
+        </div>
+    </div>
+    </form>
+    <form method = "post" action="search-id.php">
+    <div class ="row"> 
        <div class = "input field col s4 offset-s1"> 
                 <input placeholder ="Search"  id="searchbar" name="searchbar" class="validate">
        </div>
        <div class ="row"> 
-            <button class = "btn waves-effect waves-light col s3 offset-s4 black" type="submit" name="action"> Finish </button>
+            <button class = "btn waves-effect waves-light col s3 offset-s4 black" type="submit" name="action"> SEARCH </button>
         </div>
     </div>
     </form>
