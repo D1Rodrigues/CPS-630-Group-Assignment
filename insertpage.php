@@ -120,47 +120,21 @@
 </nav>
 </body>
     <h4 class ="center"> Insert User </h4>
-    <form> 
+    <form method ="post" action = "dropdown-insert.php"> 
     <div class ="row"> 
             <div class = "row"> 
                 <div class ="input-field col s2 offset-s1">
-                    <input placeholder="User ID" id ="UserID" name = "UserID" type="text" class="validate">
+                    <input placeholder="User ID" id ="UserID" name = "table" type="text" class="validate">
                     <label for = "UserID"> User ID </label>
                 </div> 
                 <div class ="input-field col s2 offset-s1">
-                    <input placeholder="User First Name" id ="UserFname" name = "UserFname" type="text" class="validate">
+                    <input placeholder="User First Name" id ="UserFname" name = "columns" type="text" class="validate">
                     <label for = "UserFname"> User First Name </label>
                 </div> 
                 <div class ="input-field col s2 offset-s1">
-                    <input placeholder="User Last Name" id ="UserLname" name = "UserLname" type="text" class="validate">
+                    <input placeholder="User Last Name" id ="UserLname" name = "values" type="text" class="validate">
                     <label for = "UserLname"> User Last Name </label>
                 </div> 
-            </div>
-            <div class = "row"> 
-                <div class ="input-field col s4 offset-s1">
-                    <input placeholder="UserEmail" id ="UserEmail" name = "UserEmail" type="text" class="validate">
-                    <label for = "UserEmail"> User Email </label>
-                </div> 
-                <div class ="input-field col s4 offset-s1">
-                    <input placeholder="User Password" id ="UserPass" name = "UserPass" type="text" class="validate">
-                    <label for = "UserPass"> User Password </label>
-                </div> 
-            </div>
-            <div class = "row"> 
-                    <div class = " col s4 offset-s1"> 
-                        <input type = "date" placeholder =" User Date of Birth" id="UserDoB" name="UserDoB" class ="datepicker" style ="color:lightgray">
-                        <label for ="UserDoB"> User Date of Birth</label>
-                    </div> 
-                    <div class  = "input-field col s4 offset-s1">
-                        <select name="UserGender">
-                            <option value ="" disabled selected> Gender </option>
-                            <option value ="Male"> Male </option>
-                            <option value ="Female"> Female </option>
-                            <option value ="Other"> Other </option>
-                            <option value ="AAH"> APACHE ATTACK HELICOPTER </option>
-                        </select>
-                    </div>
-            </div>
             <div class ="row"> 
                     <button class = "btn waves-effect waves-light col s4 offset-s4 black" type="submit" name="action"> Insert User</button>
             </div>
