@@ -120,7 +120,7 @@
 </nav>
 </body>
     <h4 class ="center"> Select User </h4>
-    <form> 
+    <form method="post" action="dropdown-select.php"> 
     <div class ="row"> 
                 <div class ="input-field col s4 offset-s1">
                     <input placeholder="Table Name" id ="TName" name = "TName" type="text" class="validate">
