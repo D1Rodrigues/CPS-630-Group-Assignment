@@ -49,7 +49,7 @@
                  </li>
                  <!-- Shopping Cart -->
                 <li> 
-                    <a class="btn-flat black-text"> <i class="material-icons right">shopping_cart</i> Cart</a>
+                <a class="btn-flat black-text" href = "cart.php" > <i class="material-icons right">shopping_cart</i> Cart</a>
                  </li>
             </ul>
            

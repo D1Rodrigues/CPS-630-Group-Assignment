@@ -61,7 +61,7 @@
         {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header("Location: P_Home.html");
+            header("Location: P_Home.php");
         }	
     }
     else //if there any errors, tell user to try start again
@@ -71,6 +71,6 @@
             echo $errorWarning . "<br>";
         }
         echo "Please go back and try again.";
-        echo '<a href = "sign-up.html"> Try registering again!</a>';
+        echo '<a href = "sign-up.php"> Try registering again!</a>';
     }
 ?>

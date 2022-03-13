@@ -14,8 +14,8 @@
          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <title> DND FASHION</title>
     </head>
-<body> 
-<nav class = "nav-wrapper white"> 
+    <body> 
+    <nav class = "nav-wrapper white"> 
         <ul id = "nav-mobile" class="left hide-on-med-and-down">
             <!-- Home -->
             <li> 
@@ -107,40 +107,71 @@
              </li>
         </ul>
        
-</nav>
+    </nav>
+        <!--The main body of information -->
+        <div class = "container">
+    <h4> Contact the Team! </h4>
+    <!-- Dylan Information Section -->
+    <div class = "row">
+        <p class="contact-info"> <i class ="inline-icon-account material-icons prefix">people</i>    Dylan Rodrigues:</p>
+        <p class="contact-info"> <i class ="inline-icon-account material-icons prefix"> local_phone</i>  Tele: 416-696-6969 </p>
+        <p class="contact-info"> <i class ="inline-icon-account material-icons prefix"> email</i>  Email: drod@dnd.ca  </p>
+    </div> 
+
+      <!-- Justtin Information Section -->
+    <div class = "row">
+        <p class="contact-info"> <i class ="inline-icon-account material-icons prefix">people</i>    Justtin Hoang:</p>
+        <p class="contact-info"> <i class ="inline-icon-account material-icons prefix"> local_phone</i>  Tele: 416-696-6969 </p>
+        <p class="contact-info"> <i class ="inline-icon-account material-icons prefix"> email</i>  Email: jhoang@dnd.ca  </p>
+    </div>
+
+    <!-- Al Information Section -->
+    <div class = "row">
+        <p class="contact-info"> <i class ="inline-icon-account material-icons prefix">people</i>    Al Sagun:</p>
+        <p class="contact-info"> <i class ="inline-icon-account material-icons prefix"> local_phone</i>  Tele: 416-696-6969 </p>
+        <p class="contact-info"> <i class ="inline-icon-account material-icons prefix"> email</i>  Email: aSag@dnd.ca  </p>
+    </div> 
     
-    <section class ="container"> 
-        <h3> About our staff</h3> 
-        <div class= "row"> 
-            <h4> Justtin Hoang  </h4>
-            <p> Justtin Hoang, or as he's known by his employees as "Hoang Daddy", founded Drip Not Drizzle
-                in 2022 for a project that he had to created in an extremely short period of time. They were 
-                given unrealistic expectations to finish a responsive, styled and technical shopping site in
-                less than a week. They were given vague buttons to add, a drag and drop feature that is not 
-                used in an actual retail environment and a small group of three that is in charge of creating 
-                a database and style that is both appealing an practical. 
-            </p>     
+
+    <h4>Ask us a question!</h4>
+    <!-- Question Forms -->
+    <div class ="row">
+        <form action="contactform.php" method="post">
+        <!-- Customer Name -->
+        <div class ="row"> 
+            <div class ="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input placeholder="Name" id ="nameS" name = "name" type="text" class="validate">
+            <label for = "nameS"> Name </label>
+            </div> 
         </div>
-        <div class ="row">
-            <h4> Al Sagun </h4>
-            <p> 
-                The only one who is in charge of most of the front-end of Drip Not Drizzle. Since he 
-                is the only one who is doing the styling, his job comes last which leads to a lot of time 
-            hastened because of working on looks and practicality after functionality. FUCK ME WHY THE FUCK 
-            ARE WE CREATING SOMETHING LIKE THIS IN LESS THAN A WEEK AS WELL AS THIS FUCKING PROJECT FOR THE SAME CLASS 
-            DURING THE WEEK OF READING WEEK. AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!
-            <!-- You should probably adda a picture of the people involved in the project for each paragraph 
-            maybe add their speciality and what they did on the project.-->
-            </p>
-        </div> 
-        <div class ="row">
-            <h4> Dylan Rodrigues </h4>
-            <p> 
-                
-            </p>
-        </div> 
-    </section>
-    
+
+         <!-- Customer Email -->
+        <div class ="row"> 
+            <div class ="input-field col s6">
+            <i class="material-icons prefix">email</i>
+            <input placeholder="Email" id ="mailS" name = "mail" type="text" class="validate">
+            <label for = "mailS"> Email </label>
+            </div> 
+        </div>
+
+        <!-- Customer Question -->
+        <div class ="row"> 
+            <div class ="input-field col s6">
+            <i class="material-icons prefix">question_answer</i>
+            <input placeholder="Question" id ="QnA" name = "question" type="text" class="validate">
+            <label for = "QnA"> Question </label>
+            </div> 
+        </div>
+
+        <!-- Submit Button -->
+        <div class ="row"> 
+            <button class = "btn waves-effect waves-light col s6  grey" type="submit" name="action">Submit</button>
+        </div>
+    </form>
+    </div>
+
+        </div>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

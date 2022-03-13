@@ -5,7 +5,7 @@
     require_once 'includes/retrieval.inc.php';
 
     $errors = array();
-    $email = $_POST['login-email'];
+    $email = $_POST['login-name'];
     $password = $_POST['login-password'];
 
     //check if the fields are filled in
@@ -31,7 +31,7 @@
         {
             $_SESSION['email'] = $email;
             $_SESSION['success'] = "You are signed in!";
-            header("Location: P_Home.html");
+            header("Location: P_Home.php");
         }
         //...if not, 
         else 
@@ -46,7 +46,7 @@
         {
             echo $errorWarning . "<br>";
         }
-        echo '<a href = "sign-in.html"> Please try signing in again!</a>';
+        header("Location: signin.php");
     }
 
 ?>
