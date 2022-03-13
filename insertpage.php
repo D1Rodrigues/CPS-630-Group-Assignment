@@ -43,10 +43,10 @@
                 <a class='DD btn black-text white' href='#' data-target='dropdown1'>DB Maintain</a>
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><a href="">Search</a></li>
-                    <li><a href="insertpage.php">Insert</a></li>
-                    <li><a href="deletepage.php">Delete</a></li>
-                    <li><a href="selectpage.php">Select</a></li>
-                    <li><a href="updatepage.php">Update</a></li>
+                    <li><a href="">Insert</a></li>
+                    <li><a href="#!">Delete</a></li>
+                    <li><a href="#!">Select</a></li>
+                    <li><a href="#!">Update</a></li>
                 </ul>
             
              </li>
@@ -118,32 +118,55 @@
         </ul>
        
 </nav>
-    <br>
-<!--Main body -->
-<section>
-    <div class = "container"> 
-    <!-- Carousel of Images -->
-     <div class = "carousel carousel-slider center" id ="demo-carousel" data-indicators="true"> 
-     <a class = "carousel-item" href ="#one!"><img src = "Pictures/FCollect.jpg" class="ad1"></a>
-     <a class = "carousel-item" href ="#two!"><img src = "Pictures/Soled.png"></a>
-     <a class = "carousel-item" href ="#three!"><img src = "Pictures/OffWhite.png"></a>
-     </div>
-    <br> 
-    <br>
-    <form method = "post" action="search-id.php">
-    <div class ="row"> 
-       <div class = "input field col s4 offset-s1"> 
-                <input placeholder ="Search"  id="searchbar" name="searchbar" class="validate">
-       </div>
-       <div class ="row"> 
-            <button class = "btn waves-effect waves-light col s3 offset-s4 black" type="submit" name="action"> SEARCH </button>
-        </div>
-    </div>
-    </form>
-</section> 
-
-
 </body>
+    <h4 class ="center"> Insert User </h4>
+    <form> 
+    <div class ="row"> 
+            <div class = "row"> 
+                <div class ="input-field col s2 offset-s1">
+                    <input placeholder="User ID" id ="UserID" name = "UserID" type="text" class="validate">
+                    <label for = "UserID"> User ID </label>
+                </div> 
+                <div class ="input-field col s2 offset-s1">
+                    <input placeholder="User First Name" id ="UserFname" name = "UserFname" type="text" class="validate">
+                    <label for = "UserFname"> User First Name </label>
+                </div> 
+                <div class ="input-field col s2 offset-s1">
+                    <input placeholder="User Last Name" id ="UserLname" name = "UserLname" type="text" class="validate">
+                    <label for = "UserLname"> User Last Name </label>
+                </div> 
+            </div>
+            <div class = "row"> 
+                <div class ="input-field col s4 offset-s1">
+                    <input placeholder="UserEmail" id ="UserEmail" name = "UserEmail" type="text" class="validate">
+                    <label for = "UserEmail"> User Email </label>
+                </div> 
+                <div class ="input-field col s4 offset-s1">
+                    <input placeholder="User Password" id ="UserPass" name = "UserPass" type="text" class="validate">
+                    <label for = "UserPass"> User Password </label>
+                </div> 
+            </div>
+            <div class = "row"> 
+                    <div class = " col s4 offset-s1"> 
+                        <input type = "date" placeholder =" User Date of Birth" id="UserDoB" name="UserDoB" class ="datepicker" style ="color:lightgray">
+                        <label for ="UserDoB"> User Date of Birth</label>
+                    </div> 
+                    <div class  = "input-field col s4 offset-s1">
+                        <select name="UserGender">
+                            <option value ="" disabled selected> Gender </option>
+                            <option value ="Male"> Male </option>
+                            <option value ="Female"> Female </option>
+                            <option value ="Other"> Other </option>
+                            <option value ="AAH"> APACHE ATTACK HELICOPTER </option>
+                        </select>
+                    </div>
+            </div>
+            <div class ="row"> 
+                    <button class = "btn waves-effect waves-light col s4 offset-s4 black" type="submit" name="action"> Insert User</button>
+            </div>
+    </div>
+    </form> 
+        
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
@@ -159,6 +182,4 @@
         });
         $('.DD').dropdown();
 </script>
-
-
-</html>
+</html> 
