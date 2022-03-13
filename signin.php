@@ -1,0 +1,53 @@
+<?php
+    session_start();
+    //require_once 'config.php';
+    require_once 'db.inc.php';
+    require_once 'retrieval.inc.php';
+
+    $errors = array();
+    $email = $_POST['login-email'];
+    $password = $_POST['login-password'];
+
+    //check if the fields are filled in
+    //...if not, put the error into the $errors array
+    if (empty($email) || ctype_space($email))
+    {
+        array_push($errors, "Email field is empty. Please enter in your email.");
+    }
+    if (empty($password) || ctype_space($password))
+    {
+        array_push($errors, "Password field is empty. Please enter in your password.");
+    }
+
+    //if there are no errors, see if the user's email & pswd are in database
+    if(count($errors) == 0)
+    {
+
+        $model = new Retrieval("Users");
+        $result = $model->getRecords("*", "email='$email'  AND pswd='$password'");
+    
+        //... if they are, user is logged in and sent to homepage
+        if($result->num_rows == 1)
+        {
+            $_SESSION['email'] = $email;
+            $_SESSION['success'] = "You are signed in!";
+            header("Location: P_Home.html");
+        }
+        //...if not, 
+        else 
+        {
+            array_push($errors, "Password or email not registered. Please sign up.");
+        }
+    }
+
+    if (count($errors) > 0)
+    {
+        foreach ($errors as $errorWarning)
+        {
+            echo $errorWarning . "<br>";
+        }
+        echo '<a href = "sign-in.html"> Please try signing in again!</a>';
+    }
+
+
+?>
