@@ -1,8 +1,8 @@
 <?php
     session_start();
     //require_once 'config.php';
-    require_once 'db.inc.php';
-    require_once 'retrieval.inc.php';
+    require_once 'includes/db.inc.php';
+    require_once 'includes/retrieval.inc.php';
 
     $errors = array();
     $email = $_POST['login-email'];
@@ -48,6 +48,5 @@
         }
         echo '<a href = "sign-in.html"> Please try signing in again!</a>';
     }
-
 
 ?>
