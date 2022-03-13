@@ -22,6 +22,37 @@
   .contact-info {
     font-size: 20px !important;
   }
+
+  ul.logo-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 1500px !important;
+    overflow-x: auto !important;
+  }
+  .products {
+    width: 400px !important;
+  }
+  ul.logo-list li {
+    flex: 0 0 auto !important;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: white;
+  }
+
+  section#cart ul {
+    height: 200px !important;
+    overflow: auto !important;
+    background-color: slategray !important;
+  }
+
+  img {
+    pointer-events: none !important;
+  }
+  li[data-id] img {
+    display: none !important;
+  }
 }
 @media only screen and (max-width: 1366px) and (min-width: 1280px) {
   .Dman {
@@ -41,7 +72,34 @@
     width: 100% !important;
     background-color: black;
   }
+  ul.logo-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    width: 1000px !important;
+  }
   .products {
-    width: 30% !important;
+    width: 400px !important;
+  }
+  ul.logo-list li {
+    flex: 0 0 auto !important;
+    width: 150px !important;
+    height: 150px !important;
+    background-color: white;
+  }
+
+  section#cart ul {
+    height: 150px !important;
+    overflow: auto !important;
+    background-color: slategray !important;
+  }
+
+  img {
+    pointer-events: none !important;
+  }
+  li[data-id] img {
+    display: none !important;
   }
 }
