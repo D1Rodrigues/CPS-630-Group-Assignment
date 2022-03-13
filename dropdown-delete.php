@@ -7,7 +7,7 @@
     $conditions = $_POST["Conditions"];
 
     $m = new Deletion("$table");
-    if(!empty($conditions) && !ctype_space($email))
+    if(!empty($conditions) && !ctype_space($conditions))
     {
         $res = $m->deleteRecords($conditions);
     }
