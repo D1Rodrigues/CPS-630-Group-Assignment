@@ -115,7 +115,7 @@
      <div class = "carousel carousel-slider center" id ="demo-carousel" data-indicators="true"> 
      <a class = "carousel-item" href ="#one!"><img src = "Pictures/FCollect.jpg" class="ad1"></a>
      <a class = "carousel-item" href ="#two!"><img src = "Pictures/Soled.png"></a>
-     <a class = "carousel-item" href ="#three!"><img src = "Pictures/Offwhite.jpg"></a>
+     <a class = "carousel-item" href ="#three!"><img src = "Pictures/OffWhite.png"></a>
      </div>
     <br> 
     <br>
