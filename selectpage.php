@@ -122,16 +122,18 @@
     <h4 class ="center"> Select User </h4>
     <form> 
     <div class ="row"> 
-            <div class = "row"> 
                 <div class ="input-field col s4 offset-s1">
                     <input placeholder="Table Name" id ="TName" name = "TName" type="text" class="validate">
                     <label for = "TName"> Table Name </label>
                 </div> 
                 <div class ="input-field col s4 offset-s1">
+                    <input placeholder="Columns" id ="TName" name = "Columns" type="text" class="validate">
+                    <label for = "TName"> Columns </label>
+                </div> 
+                <div class ="input-field col s4 offset-s1">
                     <input placeholder="Conditions" id ="Conditions" name = "Conditions" type="text" class="validate">
                     <label for = "Conditions"> Conditions </label>
                 </div> 
-            </div>
             <div class ="row"> 
                     <button class = "btn waves-effect waves-light col s4 offset-s4 black" type="submit" name="action"> Select</button>
             </div>
