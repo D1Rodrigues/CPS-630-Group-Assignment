@@ -16,7 +16,7 @@
         
         return $result;
 
-        $conn->close();
+        //$conn->close();
 
       }
     }
