@@ -110,117 +110,25 @@
      </div>
     <br> 
     <br>
-     <!-- Product Rows -->
-    <!-- Row 1 -->
-     <div class ="row">
-        <div class ="col s4"> 
-            <div class ="card"> 
-                <div class = "card-image"> 
-                    <img src = "Pictures/jesus.jpg"> 
-                </div>
-                <div class = "card-content">
-                    <p> Enter Product Name here </p>
-                </div> 
-            </div> 
+    <form method = "post">
+    <div class ="row"> 
+       <div class ="col s5 ">
+        <select name="edit">
+            <option value ="" disabled selected> Choice </option>
+            <option value ="insert"> Insert </option>
+            <option value ="delete"> Delete </option>
+            <option value ="(s)elect"> Select </option>
+            <option value ="update"> Update </option>
+        </select>
+       </div> 
+       <div class = "input field col s4 offset-s1"> 
+                <input placeholder ="Search"  id="searchbar" name="searchbar" class="validate">
+       </div>
+       <div class ="row"> 
+            <button class = "btn waves-effect waves-light col s3 offset-s4 black" type="submit" name="action"> Finish </button>
         </div>
-
-        <div class ="col s4"> 
-            <div class ="card"> 
-                <div class = "card-image"> 
-                    <img src = "Pictures/jesus.jpg"> 
-                </div>
-                <div class = "card-content">
-                    <p> Enter Product Name here </p>
-                </div> 
-            </div> 
-        </div>
-        
-        <div class ="col s4"> 
-            <div class ="card"> 
-                <div class = "card-image"> 
-                    <img src = "Pictures/jesus.jpg"> 
-                </div>
-                <div class = "card-content">
-                    <p> Enter Product Name here </p>
-                </div> 
-            </div> 
-        </div>
-
-     </div> 
-    <!--  Row 2  -->
-    <div class ="row">
-        <div class ="col s4"> 
-            <div class ="card"> 
-                <div class = "card-image"> 
-                    <img src = "Pictures/jesus.jpg"> 
-                </div>
-                <div class = "card-content">
-                    <p> Enter Product Name here </p>
-                </div> 
-            </div> 
-        </div>
-
-        <div class ="col s4"> 
-            <div class ="card"> 
-                <div class = "card-image"> 
-                    <img src = "Pictures/jesus.jpg"> 
-                </div>
-                <div class = "card-content">
-                    <p> Enter Product Name here </p>
-                </div> 
-            </div> 
-        </div>
-        
-        <div class ="col s4"> 
-            <div class ="card"> 
-                <div class = "card-image"> 
-                    <img src = "Pictures/jesus.jpg"> 
-                </div>
-                <div class = "card-content">
-                    <p> Enter Product Name here </p>
-                </div> 
-            </div> 
-        </div>
-
-     </div> 
-     <!--  Row 3 -->
-     <div class ="row">
-        <div class ="col s4"> 
-            <div class ="card"> 
-                <div class = "card-image"> 
-                    <img src = "Pictures/jesus.jpg"> 
-                </div>
-                <div class = "card-content">
-                    <p> Enter Product Name here </p>
-                </div> 
-            </div> 
-        </div>
-
-        <div class ="col s4"> 
-            <div class ="card"> 
-                <div class = "card-image"> 
-                    <img src = "Pictures/jesus.jpg"> 
-                </div>
-                <div class = "card-content">
-                    <p> Enter Product Name here </p>
-                </div> 
-            </div> 
-        </div>
-        
-        <div class ="col s4"> 
-            <div class ="card"> 
-                <div class = "card-image"> 
-                    <img src = "Pictures/jesus.jpg"> 
-                </div>
-                <div class = "card-content">
-                    <p> Enter Product Name here </p>
-                </div> 
-            </div> 
-        </div>
-
-     </div> 
-
     </div>
+    </form>
 </section> 
 
 
@@ -234,7 +142,10 @@
   });
   $(document).ready(function(){ 
       $(".modal").modal();
-  })
+  });
+  $(document).ready(function(){
+        $('select').formSelect();
+        });
 </script>
 
 
