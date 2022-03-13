@@ -1,6 +1,8 @@
 <?php
    session_start();    
-   require_once 'config.php';
+   require_once 'includes/db.inc.php';
+   require_once 'includes/retrieval.inc.php';
+   require_once 'includes/insert.inc.php';
 
     $fname = $_POST["signup-fname"];
     $lname = $_POST["signup-lname"];
@@ -41,8 +43,8 @@
     }
 
     //check if email already exists in the database
-    $user_check_email = "SELECT * FROM users WHERE email='$email'";
-    $result = $conn->query($user_check_email);
+    $model = new Retrieval("Users");
+    $result = $model->getRecords("*", "email='$email'");
     
     if ($result->num_rows > 0) { // if user exists
         array_push($errors, "Email already exists");
@@ -51,10 +53,11 @@
     //if there are errors then register user by putting their details into databse
     if(count($errors) == 0)
     {
-        $sql = "INSERT INTO Users (firstname, lastname, email, pswd, dob, gender) 
-                VALUES('$fname', '$lname', '$email', '$password', '$date', '$gender')";
+        $m = new InsertRecords("Users");
+        $res = $m->insert("firstname, lastname, email, pswd, dob, gender", 
+        "'$fname', '$lname', '$email', '$password', '$date', '$gender'");
 
-        if ($conn->query($sql))
+        if ($res)
         {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
