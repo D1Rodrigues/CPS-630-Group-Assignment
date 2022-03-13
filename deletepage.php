@@ -128,10 +128,6 @@
                     <label for = "TName"> Table Name </label>
                 </div> 
                 <div class ="input-field col s4 offset-s1">
-                    <input placeholder="Columns" id ="TName" name = "Columns" type="text" class="validate">
-                    <label for = "TName"> Columns </label>
-                </div> 
-                <div class ="input-field col s4 offset-s1">
                     <input placeholder="Conditions" id ="Conditions" name = "Conditions" type="text" class="validate">
                     <label for = "Conditions"> Conditions </label>
                 </div> 
