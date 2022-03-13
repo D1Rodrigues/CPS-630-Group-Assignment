@@ -139,6 +139,11 @@
             <button class = "btn waves-effect waves-light col s3 offset-s4 black" type="submit" name="action"> SEARCH </button>
         </div>
     </div>
+
+    <?php
+        echo $_SESSION['order_id'];
+        echo $_SESSION['user_id'];
+        ?>
     </form>
 </section> 
 
