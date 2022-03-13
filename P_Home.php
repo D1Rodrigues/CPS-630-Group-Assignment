@@ -19,11 +19,11 @@
              </li>
              <!-- About Us -->
              <li> 
-                <a class="btn-flat black-text" href = "aboutus.html">About Us</a>
+                <a class="btn-flat black-text" href = "aboutus.php">About Us</a>
              </li>
              <!-- Contact Us -->
              <li> 
-                <a class="btn-flat black-text" href = "contact-us.html">Contact Us</a>
+                <a class="btn-flat black-text" href = "contact-us.php">Contact Us</a>
              </li>
              <!-- Reviews -->
              <li> 
@@ -88,7 +88,7 @@
 
              <!-- Sign-up Modal -->
              <li> 
-                <a class="btn-flat black-text modal-trigger" href="sign-up.html" >Sign-up</a>
+                <a class="btn-flat black-text modal-trigger" href="sign-up.php" >Sign-up</a>
                 <!--- This is all the sign-in stuff which is a modal so it pops up on screen when clicked -->
              </li>
              <!-- Shopping Cart -->
