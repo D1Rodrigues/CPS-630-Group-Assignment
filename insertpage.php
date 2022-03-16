@@ -44,9 +44,9 @@
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><a href="">Search</a></li>
                     <li><a href="">Insert</a></li>
-                    <li><a href="#!">Delete</a></li>
-                    <li><a href="#!">Select</a></li>
-                    <li><a href="#!">Update</a></li>
+                    <li><a href="deletepage.php">Delete</a></li>
+                    <li><a href="selectpage.php">Select</a></li>
+                    <li><a href="updatepage.php">Update</a></li>
                 </ul>
             
              </li>
@@ -119,27 +119,36 @@
        
 </nav>
 </body>
-    <h4 class ="center"> Insert User </h4>
+    <h4 class ="center"> Insert</h4>
     <form method ="post" action = "dropdown-insert.php"> 
     <div class ="row"> 
             <div class = "row"> 
                 <div class ="input-field col s2 offset-s1">
-                    <input placeholder="User ID" id ="UserID" name = "table" type="text" class="validate">
-                    <label for = "UserID"> User ID </label>
+                    <input placeholder="Table" id ="Table" name = "table" type="text" class="validate">
+                    <label for = "table"> Table </label>
                 </div> 
                 <div class ="input-field col s2 offset-s1">
-                    <input placeholder="User First Name" id ="UserFname" name = "columns" type="text" class="validate">
-                    <label for = "UserFname"> User First Name </label>
+                    <input placeholder="Columns" id ="Columns" name = "columns" type="text" class="validate">
+                    <label for = "Columns"> Columns  </label>
                 </div> 
                 <div class ="input-field col s2 offset-s1">
-                    <input placeholder="User Last Name" id ="UserLname" name = "values" type="text" class="validate">
-                    <label for = "UserLname"> User Last Name </label>
+                    <input placeholder="Attributes" id ="values" name = "values" type="text" class="validate">
+                    <label for = "attributes"> attributes</label>
                 </div> 
             <div class ="row"> 
-                    <button class = "btn waves-effect waves-light col s4 offset-s4 black" type="submit" name="action"> Insert User</button>
+                    <button class = "btn waves-effect waves-light col s4 offset-s4 black" type="submit" name="action"> Insert</button>
             </div>
     </div>
     </form> 
+    <?php 
+        $insertStatus = $_SESSION['InsertStatus'];
+        if($insertStatus == true){ 
+            echo "<div class =\"center\">  Successfully Inserted Information </div> ";
+        }
+        else{
+            echo "<div class =\"center\"> Unable to add to table, please try again </div>";
+        }
+    ?>
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

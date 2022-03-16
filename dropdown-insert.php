@@ -1,19 +1,16 @@
 <?php
+    session_start();
     require_once "includes/db.inc.php";
     require_once "includes/insert.inc.php";
 
     echo "cock";
     
     
-    session_start();
+
 
     $table = $_POST["table"];
     $columns = $_POST["columns"];
     $values = $_POST["values"];
-
-    echo $table . "<br>";
-    echo $columns. "<br>";
-    echo $values ."<br>";
 
     
     $m = new InsertRecords("$table");
@@ -21,10 +18,12 @@
 
     if ($res)
     {
-        header("Location: P_Home.php");
+        $_SESSION['InsertStatus'] = true;
+        header("Location: insertpage.php");
     }
     else{
-        header("Location: aboutus.php");
+        $_SESSION['InsertStatus'] = false;
+        header("Location: insertpage.php");
     }
 
     
