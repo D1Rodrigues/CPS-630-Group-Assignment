@@ -120,7 +120,7 @@
 </nav>
 </body>
     <h4 class ="center"> Update User </h4>
-    <form> 
+    <form method="post" action="dropdown-update.php"> 
     <div class ="row"> 
             <div class = "row"> 
                 <div class ="input-field col s2 offset-s1">
