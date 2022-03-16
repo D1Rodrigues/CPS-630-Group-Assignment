@@ -1,5 +1,5 @@
 <?php
-    session_start();
+       session_start();
 ?>
 <!DOCTYPE html> 
 <html> 
@@ -138,7 +138,21 @@
                     <button class = "btn waves-effect waves-light col s4 offset-s4 black" type="submit" name="action"> Select</button>
             </div>
     </form> 
+    <?php
+        $s = $_SESSION['selectStats'];
+        if( $s == true){
+            $result = $_SESSION['selectResults']; 
+            echo serialize($result);
+        }
+         else{ 
+            echo 'Could not find user';
+        }
         
+
+        
+        
+       
+    ?>
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
