@@ -113,30 +113,30 @@
         <h3> About our staff</h3> 
         <div class= "row"> 
             <h4> Justtin Hoang  </h4>
-            <p> Justtin Hoang, or as he's known by his employees as "Hoang Daddy", founded Drip Not Drizzle
-                in 2022 for a project that he had to created in an extremely short period of time. They were 
-                given unrealistic expectations to finish a responsive, styled and technical shopping site in
-                less than a week. They were given vague buttons to add, a drag and drop feature that is not 
-                used in an actual retail environment and a small group of three that is in charge of creating 
-                a database and style that is both appealing an practical. 
+            <img src ="Pictures/HoangDaddy.jpg" class = "col s2" > 
+            <p> Justtin Hoang, or as he's known by his employees as "The genius behind Drip Not Drizzle", is a full stack developer who did 
+                balanced share of both the back-end development as well as the front. He was in charge of creating the interactive maps, shopping cart, 
+                shopping cart database as well as bug testing and some bug fixing. Mostly focusing on the front end he used Javascript, html and css to acheive his goals. 
             </p>     
         </div>
         <div class ="row">
             <h4> Al Sagun </h4>
+    
+            <img src ="Pictures/Al.png" class = "col s2" > 
             <p> 
-                The only one who is in charge of most of the front-end of Drip Not Drizzle. Since he 
-                is the only one who is doing the styling, his job comes last which leads to a lot of time 
-            hastened because of working on looks and practicality after functionality. FUCK ME WHY THE FUCK 
-            ARE WE CREATING SOMETHING LIKE THIS IN LESS THAN A WEEK AS WELL AS THIS FUCKING PROJECT FOR THE SAME CLASS 
-            DURING THE WEEK OF READING WEEK. AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!
-            <!-- You should probably adda a picture of the people involved in the project for each paragraph 
-            maybe add their speciality and what they did on the project.-->
+                Al Sagun, or as he's known by his employees as Al "Capone" Sagun, is a front end developer that was in charge of the design and layout of drip not drizzle. 
+                Mainly focusing on the front-end, he used the "Materialize" framework to create a sleek and eye-catching design the website. 
+                The langauges that his mostly used were: html, javascript, materialize, css and php.
             </p>
         </div> 
         <div class ="row">
             <h4> Dylan Rodrigues </h4>
+            <img src ="Pictures/Dylan.jpg" class = "col s2" > 
             <p> 
-                
+                Dylan Rodrigues or as he's known by his employees as Dylan "Drip" Rodrigues is a back-end developer that was in charge of mostly everything behind the scenes of the website. 
+                This includes everything from the database as well as connecting everything from the database to the main website. He tried to create a complex 
+                interconnected database that works both fast and well. Mostly focusing on languages and databases such as PHP and SQL, he also helped out a little with the 
+                layout of the website using html and a little css. 
             </p>
         </div> 
     </section>
